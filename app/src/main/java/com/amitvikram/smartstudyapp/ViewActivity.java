@@ -33,19 +33,22 @@ public class ViewActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view);
+        openDialog();
         arFragment = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.arfragment);
         intent = getIntent();
         String modelName = intent.getStringExtra("model_name");
         String modelLink = intent.getStringExtra("model_link");
         modelName = modelName+".glb";
-        Toast.makeText(this, modelName, Toast.LENGTH_LONG).show();
-        Toast.makeText(this, modelLink, Toast.LENGTH_LONG).show();
+
 
         downloadModel(modelName);
     }
-
+    public void openDialog() {
+        Instruction in = new Instruction();
+        in.show(getSupportFragmentManager(), "Instruction Dialog");
+    }
     private void downloadModel(String name) {
-        Toast.makeText(this, "Model Downloading", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Model Downloading, Please wait..", Toast.LENGTH_SHORT).show();
         //FirebaseApp.initializeApp(this);
         modelRef = FirebaseStorage.getInstance().getReference().child(name);
         try {
@@ -73,7 +76,7 @@ public class ViewActivity extends AppCompatActivity {
                 .setRegistryId(file.getPath())
                 .build()
                 .thenAccept(modelRenderable -> {
-                    Toast.makeText(this, "Model downloaded", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "Model Downloaded..", Toast.LENGTH_LONG).show();
                     renderable = modelRenderable;
                 });
         arFragment.setOnTapArPlaneListener((hitResult, plane, motionEvent) -> {

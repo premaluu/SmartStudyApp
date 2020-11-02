@@ -5,13 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:scrollbars="vertical"
     tools:context=".UserFragment">
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="240dp"
-        android:src="@drawable/user_logo"
+        android:src="@drawable/user"
         app:layout_constraintBottom_toTopOf="@+id/materialUpdateButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -40,7 +41,7 @@
             tools:layout_editor_absoluteY="289dp">
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
@@ -48,20 +49,20 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:fontFamily="@font/alfa_slab_one"
+                    android:textColor="@color/black"
                     android:text="Name: " />
 
                 <TextView
                     android:id="@+id/txt_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="80dp"
-                    android:fontFamily="@font/alfa_slab_one"
+                    android:layout_marginStart="20dp"
+                    android:textColor="@color/black"
                     android:text="Premal Upadhyay" />
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
@@ -69,22 +70,20 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-
-                    android:fontFamily="@font/alfa_slab_one"
+                    android:textColor="@color/black"
                     android:text="Email: " />
 
                 <TextView
                     android:id="@+id/txt_email"
-
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="50dp"
-                    android:fontFamily="@font/alfa_slab_one"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/black"
                     android:text="premalupadhyay56@gmail.com" />
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
@@ -92,18 +91,43 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
-
-                    android:fontFamily="@font/alfa_slab_one"
+                    android:textColor="@color/black"
                     android:text="Phone: " />
 
                 <TextView
                     android:id="@+id/txt_mobile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="80dp"
-                    android:fontFamily="@font/alfa_slab_one"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/black"
                     android:text="7433819619" />
+
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="100dp"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:text="You are " />
+
+                <TextView
+                    android:id="@+id/txt_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="0dp"
+                    style="bold"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:text="Teacher" />
+
+            </LinearLayout>
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

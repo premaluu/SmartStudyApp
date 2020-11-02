@@ -70,4 +70,10 @@ public class SessionManager {
 
     }
 
+    public void update() {
+        editor.clear();
+        editor.commit();
+    }
+
+
 }

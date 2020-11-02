@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -21,13 +22,15 @@ import com.google.firebase.storage.FirebaseStorage;
 
 import java.util.ArrayList;
 
-public class ModelActivity extends AppCompatActivity {
+public class ModelActivity extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener {
     RecyclerView recyclerView;
     FirebaseStorage firebaseStorage;
     FirebaseDatabase firebaseDatabase;
     ArrayList<Models> arrayList = new ArrayList<>();
     ModelListAdapter modelListAdapter;
     DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
+    private SwipeRefreshLayout swipeRefreshLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,12 +40,17 @@ public class ModelActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         firebaseStorage = FirebaseStorage.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
+        swipeRefreshLayout = findViewById(R.id.refresh_layout_model);
+        swipeRefreshLayout.setOnRefreshListener(this);
+        swipeRefreshLayout.setRefreshing(true);
+        swipeRefreshLayout.setColorSchemeResources(R.color.colorPrimary);
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot postSnapshot : snapshot.getChildren()) {
                     arrayList.add(new Models(postSnapshot.getKey(), postSnapshot.getValue(String.class)));
                 }
+                swipeRefreshLayout.setRefreshing(false);
                 initAdapter();
             }
 
@@ -53,6 +61,12 @@ public class ModelActivity extends AppCompatActivity {
         });
 
     }
+
+    @Override
+    public void onRefresh() {
+    }
+
+
 
     private void initAdapter() {
         modelListAdapter = new ModelListAdapter(arrayList, this);

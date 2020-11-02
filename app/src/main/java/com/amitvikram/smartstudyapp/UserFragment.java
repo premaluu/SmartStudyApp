@@ -31,9 +31,9 @@ public class UserFragment extends Fragment {
     private String mParam1;
     private String mParam2;
     SessionManager sessionManager;
-    private TextView name, email, mobile;
+    private TextView name, email, mobile, type;
     private Button btn_logout, btn_update;
-    String getMobile, getUserName, getEmail;
+    String getMobile, getUserName, getEmail, getType;
     public UserFragment() {
         // Required empty public constructor
     }
@@ -76,14 +76,17 @@ public class UserFragment extends Fragment {
         name = view.findViewById(R.id.txt_name);
         email = view.findViewById(R.id.txt_email);
         mobile = view.findViewById(R.id.txt_mobile);
+        type = view.findViewById(R.id.txt_type);
         btn_logout = view.findViewById(R.id.materialLogoutButton);
         HashMap<String, String> user = sessionManager.getUserDetail();
         getMobile = user.get(SessionManager.MOBILE);
         getUserName = user.get(SessionManager.NAME);
         getEmail = user.get(SessionManager.EMAIL);
+        getType = user.get(SessionManager.USERTYPE);
         mobile.setText(getMobile);
         name.setText(getUserName);
         email.setText(getEmail);
+        type.setText(getType);
         btn_logout.setOnClickListener(new View.OnClickListener() {
 
             @Override

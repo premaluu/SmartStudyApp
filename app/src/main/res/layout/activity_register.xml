@@ -148,15 +148,7 @@
         android:background="@color/white"
         android:textColor="#555353"/>
 
-    <CheckBox
-        android:id="@+id/terms_conditions"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="7dp"
-        android:text="@string/terms_conditions"
-        android:textColor="@color/black"
-        android:buttonTint="@color/colorPrimary"
-        android:textSize="14sp" />
+
 
     <Button
         android:id="@+id/signUpBtn"

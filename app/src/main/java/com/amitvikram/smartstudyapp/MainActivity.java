@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
@@ -16,11 +18,14 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.ar.core.AugmentedImageDatabase;
+import com.google.ar.core.Config;
+import com.google.ar.core.Session;
 
 import java.util.HashMap;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements HomeFragment.OnFragmentInteractionListener, BookFragment.OnFragmentInteractionListener, VideoFragment.OnFragmentInteractionListener, UserFragment.OnFragmentInteractionListener {
+public class MainActivity extends AppCompatActivity implements HomeFragment.OnFragmentInteractionListener, BookFragment.OnFragmentInteractionListener, UserFragment.OnFragmentInteractionListener {
     Intent intent, intent1;
     BottomNavigationView bottomNavigationView;
     SessionManager sessionManager;
@@ -30,11 +35,10 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.OnFr
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         sessionManager = new SessionManager(this);
-        sessionManager.checkLogin();
+                sessionManager.checkLogin();
         intent = new Intent(MainActivity.this, LoginActivity.class);
         intent1 = getIntent();
         final HomeFragment homeFragment = new HomeFragment();
-        final VideoFragment videoFragment = new VideoFragment();
         final BookFragment bookFragment = new BookFragment();
         final UserFragment userFragment = new UserFragment();
         setFragment(homeFragment);
@@ -48,9 +52,6 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.OnFr
                         return true;
                     case R.id.nav_book:
                         setFragment(bookFragment);
-                        return true;
-                    case R.id.nav_video:
-                        setFragment(videoFragment);
                         return true;
                     case R.id.nav_user:
                         setFragment(userFragment);

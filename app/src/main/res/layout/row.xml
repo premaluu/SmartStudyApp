@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    app:cardUseCompatPadding="true"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_margin="30dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:id="@+id/title"
+            android:textColor="@color/white"
+            android:text="AR Book"
+            android:textAllCaps="true"
+                android:background="@drawable/chemi"
+            android:gravity="center"
+      />
+
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_below="@+id/title"
+    android:background="@color/white"
+    android:layout_height="wrap_content">
+
+    <Button
+        android:id="@+id/scan"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+
+        android:layout_marginStart="50dp"
+      android:background="@drawable/scan"
+        android:contentDescription="Todo" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_marginStart="40dp"
+        android:id="@+id/down"
+        android:layout_marginTop="0dp"
+        android:textColor="@color/black"
+        android:text="Download"
+        android:textAllCaps="true"
+        android:gravity="center"
+        android:layout_height="40dp"
+        android:layout_toEndOf="@+id/scan"
+        android:layout_marginBottom="0dp" />
+</RelativeLayout>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

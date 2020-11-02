@@ -32,13 +32,18 @@ public class UpdateActivity extends AppCompatActivity {
     private static String URL_REGIST = "http://smartstudyapp.000webhostapp.com/update_user_details.php";
 //    private RadioButton radioButtonStudent, radioButtonTeacher;
     private String userType = "";
-//    private RadioGroup radioGroup;
+//    private RadioGroup radioGroup
+    SessionManager sessionManager;
     private String old_email;
     private Button updateBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update);
+        sessionManager = new SessionManager(this);
+        sessionManager.checkLogin();
+        HashMap<String, String> user = sessionManager.getUserDetail();
+        userType = user.get(SessionManager.USERTYPE);
         txtName = findViewById(R.id.editText_name);
         txtPhone = findViewById(R.id.editText_phone);
         txtEmail = findViewById(R.id.editText_email);
@@ -152,12 +157,18 @@ public class UpdateActivity extends AppCompatActivity {
 //                                    btn_regist.setVisibility(View.VISIBLE);
                                 } else if (success.equals("1")) {
                                     Toast.makeText(UpdateActivity.this, "Update Success!", Toast.LENGTH_SHORT).show();
+                                    sessionManager.update();
+                                    sessionManager.createSession(name, email, mobile, userType);
+
 //                                    loading.setVisibility(View.GONE);
 //                                    btn_regist.setVisibility(View.VISIBLE);
                                     Intent intent = new Intent(UpdateActivity.this, MainActivity.class);
                                     startActivity(intent);
                                 } else {
                                     Toast.makeText(UpdateActivity.this, "Update Success!", Toast.LENGTH_SHORT).show();
+                                    sessionManager.update();
+                                    sessionManager.createSession(name, email, mobile, userType);
+
 //                                    loading.setVisibility(View.GONE);
 //                                    btn_regist.setVisibility(View.VISIBLE);
                                 }
@@ -165,7 +176,7 @@ public class UpdateActivity extends AppCompatActivity {
 
                             } catch (JSONException e) {
                                 e.printStackTrace();
-                                Toast.makeText(UpdateActivity.this, "User Already Exist. " + e.toString(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(UpdateActivity.this, "User Already Exist. ", Toast.LENGTH_SHORT).show();
 //                                loading.setVisibility(View.GONE);
 //                                btn_regist.setVisibility(View.VISIBLE);
                             }
