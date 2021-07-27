@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1056048710996",
+    "firebase_url": "https://smart-study-app-fd38a.firebaseio.com",
+    "project_id": "smart-study-app-fd38a",
+    "storage_bucket": "smart-study-app-fd38a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1056048710996:android:d6ce10620e6fa2bdd334c1",
+        "android_client_info": {
+          "package_name": "com.amitvikram.smartstudyapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1056048710996-alk4eg0c3iijln3tho3bd5nq4622qsdt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.amitvikram.smartstudyapp",
+            "certificate_hash": "d0b7da6d0c512c0d4cc52da7590ddd709cd55f07"
+          }
+        },
+        {
+          "client_id": "1056048710996-2p44dps370epj1g3d717nvbi4n93rovp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyIfuW8aLc4Fi6CLxbVUOKs4RX1Gpv0VI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1056048710996-2p44dps370epj1g3d717nvbi4n93rovp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

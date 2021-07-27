@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".UpdateActivity">
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:boxBackgroundMode="outline"
+        android:layout_marginStart="@dimen/margin_activity_horizontal"
+        android:layout_marginTop="@dimen/margin_activity_vertical"
+        android:layout_marginEnd="@dimen/margin_activity_horizontal"
+        android:hint="Name"
+        app:boxCornerRadiusBottomEnd="@dimen/cornerRadius_boxedEditText"
+        app:boxCornerRadiusBottomStart="@dimen/cornerRadius_boxedEditText"
+        app:boxCornerRadiusTopEnd="@dimen/cornerRadius_boxedEditText"
+        app:boxCornerRadiusTopStart="@dimen/cornerRadius_boxedEditText">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editText_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textSize="16sp"
+            tools:text="Home - Adam" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:boxBackgroundMode="outline"
+        android:layout_marginStart="@dimen/margin_activity_horizontal"
+        android:layout_marginTop="@dimen/margin_activity_vertical"
+        android:layout_marginEnd="@dimen/margin_activity_horizontal"
+        android:hint="Email"
+        app:boxCornerRadiusBottomEnd="@dimen/cornerRadius_boxedEditText"
+        app:boxCornerRadiusBottomStart="@dimen/cornerRadius_boxedEditText"
+        app:boxCornerRadiusTopEnd="@dimen/cornerRadius_boxedEditText"
+        app:boxCornerRadiusTopStart="@dimen/cornerRadius_boxedEditText">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editText_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textSize="16sp"
+            tools:text="Home - Adam" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:boxBackgroundMode="outline"
+        android:layout_marginStart="@dimen/margin_activity_horizontal"
+        android:layout_marginTop="@dimen/margin_activity_vertical"
+        android:layout_marginEnd="@dimen/margin_activity_horizontal"
+        android:hint="Phone"
+        app:boxCornerRadiusBottomEnd="@dimen/cornerRadius_boxedEditText"
+        app:boxCornerRadiusBottomStart="@dimen/cornerRadius_boxedEditText"
+        app:boxCornerRadiusTopEnd="@dimen/cornerRadius_boxedEditText"
+        app:boxCornerRadiusTopStart="@dimen/cornerRadius_boxedEditText">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editText_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textSize="16sp"
+            tools:text="Home - Adam" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <Button
+        android:id="@+id/btn_update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_activity_horizontal"
+        android:layout_marginEnd="@dimen/margin_activity_horizontal"
+        android:layout_marginBottom="@dimen/margin_activity_vertical"
+        android:padding="@dimen/padding_button"
+        android:text="Update"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/white"/>
+
+</LinearLayout>

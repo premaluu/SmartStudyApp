@@ -1,0 +1,16 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="margin_activity_horizontal">16dp</dimen>
+    <dimen name="margin_activity_vertical">8dp</dimen>
+
+    <dimen name="margin_interSection_vertical">16dp</dimen>
+    <dimen name="margin_interSection_horizontal">12dp</dimen>
+    <dimen name="margin_interElement_vertical">4dp</dimen>
+    <dimen name="margin_interElement_horizontal">4dp</dimen>
+
+    <dimen name="padding_button">8dp</dimen>
+
+    <dimen name="padding_boxedEditText_horizontal">4dp</dimen>
+    <dimen name="cornerRadius_boxedEditText">2dp</dimen>
+</resources>

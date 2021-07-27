@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".UpdateActivity">
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:boxBackgroundMode="outline"
+        android:layout_marginStart="@dimen/margin_activity_horizontal"
+        android:layout_marginTop="@dimen/margin_activity_vertical"
+        android:layout_marginEnd="@dimen/margin_activity_horizontal"
+        android:hint="Topic Name"
+        app:boxCornerRadiusBottomEnd="@dimen/cornerRadius_boxedEditText"
+        app:boxCornerRadiusBottomStart="@dimen/cornerRadius_boxedEditText"
+        app:boxCornerRadiusTopEnd="@dimen/cornerRadius_boxedEditText"
+        app:boxCornerRadiusTopStart="@dimen/cornerRadius_boxedEditText">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editText__topic_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textSize="16sp"
+            tools:text="Home - Adam" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:boxBackgroundMode="outline"
+        android:layout_marginStart="@dimen/margin_activity_horizontal"
+        android:layout_marginTop="@dimen/margin_activity_vertical"
+        android:layout_marginEnd="@dimen/margin_activity_horizontal"
+        android:hint="Topic Description"
+        app:boxCornerRadiusBottomEnd="@dimen/cornerRadius_boxedEditText"
+        app:boxCornerRadiusBottomStart="@dimen/cornerRadius_boxedEditText"
+        app:boxCornerRadiusTopEnd="@dimen/cornerRadius_boxedEditText"
+        app:boxCornerRadiusTopStart="@dimen/cornerRadius_boxedEditText">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editText__topic_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            tools:text="Home - Adam" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Category :"
+            android:paddingLeft="60dp"/>
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/model_upload_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Selected Model Name"
+        android:paddingLeft="130dp"/>
+
+    <Button
+        android:id="@+id/btn_select_model"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_activity_horizontal"
+        android:layout_marginEnd="@dimen/margin_activity_horizontal"
+        android:layout_marginBottom="@dimen/margin_activity_vertical"
+        android:padding="@dimen/padding_button"
+        android:text="Select Model"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/white"/>
+
+    <Button
+        android:id="@+id/btn_upload"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_activity_horizontal"
+        android:layout_marginEnd="@dimen/margin_activity_horizontal"
+        android:layout_marginBottom="@dimen/margin_activity_vertical"
+        android:padding="@dimen/padding_button"
+        android:text="Upload Topic"
+        android:drawableLeft="@drawable/ic_baseline_cloud_upload_24"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/white"/>
+
+</LinearLayout>
